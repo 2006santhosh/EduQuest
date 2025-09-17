@@ -1,8 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // import useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 export default function RegisterForm() {
-  const navigate = useNavigate(); // get navigate function
+  const navigate = useNavigate(); 
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -28,7 +28,7 @@ export default function RegisterForm() {
     setTimeout(() => {
       setLoading(false);
       alert("Registration successful (demo)");
-      navigate("/login"); // navigate to login after successful registration
+      navigate("/login"); 
     }, 1500);
   };
 
@@ -99,7 +99,7 @@ export default function RegisterForm() {
             <p className="text-gray-600">
               Already have an account?{" "}
               <button
-                onClick={() => navigate("/login")} // navigate to login
+                onClick={() => navigate("/login")} 
                 className="text-indigo-600 hover:text-indigo-500 font-medium"
               >
                 Login
