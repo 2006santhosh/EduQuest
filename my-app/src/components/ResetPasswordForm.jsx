@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // import useNavigate
 
-export default function ResetPasswordForm({ onSwitchToLogin }) {
+export default function ResetPasswordForm() {
+  const navigate = useNavigate(); // get navigate function
+
   const [email, setEmail] = React.useState("");
   const [error, setError] = React.useState("");
   const [loading, setLoading] = React.useState(false);
@@ -25,7 +28,7 @@ export default function ResetPasswordForm({ onSwitchToLogin }) {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen flex min-h-screen h-screen w-screen fixed top-0 right-0 ">
       <div className="w-1/2 flex items-center justify-center bg-gray-100">
         <div className="bg-white p-10 rounded-xl shadow-md w-full max-w-md">
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
@@ -76,7 +79,7 @@ export default function ResetPasswordForm({ onSwitchToLogin }) {
             <p className="text-gray-600">
               Remembered your password?{" "}
               <button
-                onClick={onSwitchToLogin}
+                onClick={() => navigate("/login")} // navigate to login page
                 className="text-indigo-600 hover:text-indigo-500 font-medium"
               >
                 Sign in here
